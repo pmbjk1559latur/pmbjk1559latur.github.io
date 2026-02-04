@@ -1,40 +1,33 @@
-import { CheckCircle2 } from "lucide-react";
-import Reveal from "../ui/Reveal";
+import { motion as Motion } from "motion/react";
 
 export default function Hero() {
   return (
-    <section className="min-h-[85vh] flex flex-col justify-center items-center text-center px-6 relative overflow-hidden bg-surface">
-      <div
-        className="absolute inset-0 opacity-[0.1] pointer-events-none"
-        style={{
-          backgroundImage: "radial-gradient(#0A3D62 1px, transparent 1px)",
-          backgroundSize: "32px 32px",
-        }}
-      ></div>
+    <section className="w-full bg-gradient-to-b from-blue-50 to-white px-4 py-20 sm:py-28">
+      <div className="mx-auto max-w-5xl text-center">
+        <Motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.6,
+            ease: "easeOut",
+          }}
+        >
+          {/* Trust Badge */}
+          <div className="mb-6 inline-flex items-center rounded-full bg-blue-100 px-5 py-2 text-sm font-medium text-blue-700">
+            Authorized Store · Operational since 2017
+          </div>
 
-      <Reveal>
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-gray-200 shadow-sm mb-8">
-          <CheckCircle2 className="w-4 h-4 text-bharat-blue" />
-          <span className="text-xs font-medium tracking-wide text-secondary uppercase">
-            Authorized Jan Aushadhi Kendra
-          </span>
-        </div>
-      </Reveal>
+          {/* Main Title */}
+          <h1 className="mx-auto max-w-4xl text-balance text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl md:text-5xl lg:text-6xl">
+            Pradhan Mantri Bhartiya Jan Aushadhi Kendra
+          </h1>
 
-      <Reveal delay={0.1}>
-        <h1 className="font-serif text-5xl md:text-7xl text-primary leading-[1.1] mb-6 max-w-4xl mx-auto">
-          Affordable Medicines.
-          <br />
-          <span className="text-bharat-blue">Trusted Care.</span>
-        </h1>
-      </Reveal>
-
-      <Reveal delay={0.2}>
-        <p className="font-sans text-gray-500 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-          Government of India initiative providing quality generic medicines at
-          affordable prices. Accessible to every citizen.
-        </p>
-      </Reveal>
+          {/* Tagline */}
+          <p className="mx-auto mt-6 max-w-2xl text-base text-slate-600 sm:text-lg md:text-xl">
+            Quality generic medicines at affordable prices
+          </p>
+        </Motion.div>
+      </div>
     </section>
   );
 }
