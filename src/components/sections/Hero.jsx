@@ -23,7 +23,7 @@ export default function Hero() {
           </h1>
 
           {/* Tagline */}
-          <p className="mx-auto mt-6 max-w-2xl text-base text-slate-600 sm:text-lg md:text-xl">
+          <p className="mx-auto mt-6 max-w-2xl text-sm text-slate-600 sm:text-lg md:text-xl">
             Quality generic medicines at affordable prices
           </p>
         </Motion.div>
