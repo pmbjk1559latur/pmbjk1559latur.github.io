@@ -2,7 +2,7 @@ import { motion as Motion } from "motion/react";
 
 export default function Hero() {
   return (
-    <section className="w-full bg-gradient-to-b from-blue-50 to-white px-4 py-20 sm:py-28">
+    <section className="w-full px-4 py-20 lg:h-screen lg:flex lg:items-center">
       <div className="mx-auto max-w-5xl text-center">
         <Motion.div
           initial={{ opacity: 0, y: 16 }}

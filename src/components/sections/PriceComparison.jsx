@@ -113,7 +113,7 @@ export default function PriceComparison() {
             {MEDICINES.map((med, i) => (
               <div
                 key={i}
-                className="w-64 sm:w-64 h-[380px] shrink-0 rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition hover:shadow-md"
+                className="w-64 h-[380px] shrink-0 rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition hover:shadow-md"
               >
                 {/* Image */}
                 <div className="mb-5 flex h-36 items-center justify-center rounded-lg bg-slate-100 text-slate-400">
@@ -130,7 +130,7 @@ export default function PriceComparison() {
 
                 {/* Prices */}
                 <div className="space-y-1">
-                  <p className="text-sm text-slate-500 line-through">
+                  <p className="text-sm text-red-400 font-bold line-through">
                     Market Price: {med.marketPrice}
                   </p>
                   <p className="text-base font-bold text-green-600">

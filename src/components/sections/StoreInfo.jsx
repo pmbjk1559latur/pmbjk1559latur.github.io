@@ -8,7 +8,7 @@ export default function StoreInfo() {
   const whatsappNumber = "917588062751"; // country code + number (no spaces)
 
   return (
-    <section className="w-full bg-white p-10 sm:px-4 py-16 sm:py-20">
+    <section className="w-full p-10 sm:px-4 py-16 sm:py-20">
       <div className="mx-auto max-w-6xl">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
           {/* Left Column – Contact Details */}
