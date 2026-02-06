@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="w-full bg-slate-900 px-4 py-10">
+    <footer className="bg-slate-900 px-4 py-10 w-screen relative left-1/2 -translate-x-1/2">
       <div className="mx-auto max-w-6xl text-center space-y-6">
         {/* About the Scheme */}
         <p className="mx-auto max-w-3xl text-sm leading-relaxed text-slate-300">
