@@ -1,32 +1,72 @@
 import { motion as Motion } from "motion/react";
+import { useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Hero() {
+  const navigate = useNavigate();
+  const btnRef = useRef(null);
+
+  useEffect(() => {
+    const btn = btnRef.current;
+    if (!btn) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+
+        if (entry.isIntersecting) {
+          import("./HeavyPage");
+
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 },
+    );
+
+    observer.observe(btn);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className="w-full px-4 py-20 lg:h-screen lg:flex lg:items-center">
       <div className="mx-auto max-w-5xl text-center">
         <Motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.6,
-            ease: "easeOut",
-          }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
         >
           {/* Trust Badge */}
           <div className="mb-6 inline-flex items-center rounded-full bg-blue-100 px-5 py-2 text-sm font-medium text-blue-700">
-            Authorized Store · Operational since 2017
+            Authorized Store | Operational since 2017
           </div>
 
           {/* Main Title */}
           <h1 className="mx-auto max-w-4xl text-balance text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl md:text-5xl lg:text-6xl">
-            Pradhan Mantri Bhartiya Jan Aushadhi Kendra
+            Pradhan Mantri Bhartiya Jan Aushadhi Kendra, Latur
           </h1>
 
           {/* Tagline */}
           <p className="mx-auto mt-6 max-w-2xl text-sm text-slate-600 sm:text-lg md:text-xl">
-            Quality generic medicines at affordable prices
+            Quality generic medicines at most affordable pricing!
+          </p>
+
+          {/* Supporting Description */}
+          <p className="mx-auto mt-4 max-w-2xl text-sm text-slate-600">
+            We operate Jan Aushadhi Kendra in Latur, providing genuine generic
+            medicines at most affordable prices. Our focus is on reliable
+            availability, and trusted service for everyday healthcare needs.
           </p>
         </Motion.div>
+
+        <div className="mt-10 flex justify-center">
+          <button
+            ref={btnRef}
+            onClick={() => navigate("/heavy")}
+            className="rounded-xl bg-blue-600 px-6 py-2 text-lg font-semibold text-white shadow-lg transition hover:bg-blue-700 hover:shadow-xl active:scale-95"
+          >
+            View All Medicines →
+          </button>
+        </div>
       </div>
     </section>
   );
