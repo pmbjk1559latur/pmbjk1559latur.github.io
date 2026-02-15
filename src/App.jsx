@@ -1,12 +1,11 @@
-import "./App.css";
-import Footer from "./components/sections/Footer";
+import { Routes, Route } from "react-router-dom";
+import { Suspense, lazy } from "react";
+
 import Hero from "./components/sections/Hero";
 import StoreInfo from "./components/sections/StoreInfo";
 import PriceComparison from "./components/sections/PriceComparison";
+import Footer from "./components/sections/Footer";
 import Container from "./components/Container";
-
-import { Routes, Route } from "react-router-dom";
-import { Suspense, lazy } from "react";
 
 const HeavyPage = lazy(() => import("./components/sections/HeavyPage"));
 
